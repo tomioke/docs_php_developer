@@ -1,0 +1,26 @@
+- Buka program XAMPP
+- Aktifkan Apache dan MySQL, pada samping mysql ada tombol shell 
+- Masukan skrip berikut :
+
+Pada contoh berikut, database MySQL yang dijalankan ialah melalui aplikasi XAMPP. Maka, terlebih dahulu Anda harus masuk ke direktori C:\xampp\mysql\bin atau sesuaikan dengan lokasi directori xampp kalian.
+
+$ C:\xampp\mysql\bin
+$ mysqldump -u [userdb] -p [pass] [dbname] > [backupfile.sql]
+
+Keterangan :
+
+[userdb] Nama user database Anda
+[pass] Password database Anda
+[dbname] Nama database Anda
+[backupfile.sql] Nama file untuk database yang Anda backup nantinya
+
+===========================================================================
+
+Konfigurasi database yang akan di backup pada contoh ini ialah sebagai berikut :
+
+[userdb] root
+[pass] Pada contoh ini, database tidak diberikan password. Nantinya, perintah -p [pass] tidak dieksekusi
+[dbname] akademik_db
+[backupfile.sql] Nama file backup yang nantinya dibuat ialah akademik_db_backup
+
+$ mysqldump -u root akademik_db > C:\backup_database\akademik_db_backup.sql
