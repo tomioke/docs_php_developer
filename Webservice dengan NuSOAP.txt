@@ -1,0 +1,33 @@
+Webservice  menggunakan SOAP (Simple Object Access Protocol).
+
+====================================================================================================
+
+Tutorial : https://www.youtube.com/watch?v=V0OypIqhmuE
+
+- Menggunakan format XML (Extensible Markup Language)
+
+Catatan untuk menjalankan program :
+
+
+Arsitektur program SOAP
+https://i.ibb.co/0F0jb6g/arsitektur-soap.png
+
+1. Menggunakan XAMPP 3.3.0
+2. Pada file config di folder xampp (bisa berbeda), disini ada di " D:\xampp\php\php.ini ",
+3. Untuk jaga2 apabila program xampp corrupt bisa di buat salinan di luar folder xampp, misal : "D:\backup-xampp"
+4. Cari dengan notepad++ berikut :
+   - short_open_tag=Off
+   menjadi
+   - short_open_tag=On
+5. Hapus semicolon pada extension SOAP
+   - ;extension=soap
+   menjadi 
+   - extension=soap
+6. Restart apache di XAMPP control panel
+7. Buat file info.php di dalam project, skrip:
+
+<?php
+    phpinfo();
+?>
+
+8. Dan pastikan extensi soap telah aktif. cek di : https://i.ibb.co/bWkDZhD/soap-sudah-aktif.png
