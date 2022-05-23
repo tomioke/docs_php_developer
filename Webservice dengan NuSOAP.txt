@@ -12,7 +12,8 @@ Catatan untuk menjalankan program :
 Arsitektur program SOAP
 https://i.ibb.co/0F0jb6g/arsitektur-soap.png
 
-1. Menggunakan XAMPP 3.3.0
+1. Menggunakan XAMPP 3.3.0 
+   download XAMPP disini : https://mega.nz/file/0VoSmQ7C#y24jVqxDpkMCcLkQADOUYjab15KNy621VjlCQ66_3AU
 2. Pada file config di folder xampp (bisa berbeda), disini ada di " D:\xampp\php\php.ini ",
 3. Untuk jaga2 apabila program xampp corrupt bisa di buat salinan di luar folder xampp, misal : "D:\backup-xampp"
 4. Cari dengan notepad++ berikut :
