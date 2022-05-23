@@ -24,3 +24,10 @@ Konfigurasi database yang akan di backup pada contoh ini ialah sebagai berikut :
 [backupfile.sql] Nama file backup yang nantinya dibuat ialah akademik_db_backup
 
 $ mysqldump -u root akademik_db > C:\backup_database\akademik_db_backup.sql
+
+==Tips Error Mysqldump Saat Backup Database MYSQL di XAMPP Server==
+
+-  Jalankan XAMPP Control Panel, lalu klik Config pada module MySQL dan pilih my.ini
+
+-  Masukkan script skip-grant-tables tepat di bawah [mysqld]. Lalu, simpan skrip tersebut dengan Ctrl + S.
+Selengkapnya ada di : https://www.niagahoster.co.id/blog/mengatasi-phpmyadmin-access-denied/
