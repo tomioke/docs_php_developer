@@ -5,7 +5,7 @@
 Pada contoh berikut, database MySQL yang dijalankan ialah melalui aplikasi XAMPP. Maka, terlebih dahulu Anda harus masuk ke direktori C:\xampp\mysql\bin atau sesuaikan dengan lokasi directori xampp kalian.
 
 $ C:\xampp\mysql\bin
-$ mysqldump -u [userdb] -p [pass] [dbname] > [backupfile.sql]
+$ mysqldump -u [userdb] -p [pass] [dbname] > [<your_directory>\backupfile.sql]
 
 Keterangan :
 
