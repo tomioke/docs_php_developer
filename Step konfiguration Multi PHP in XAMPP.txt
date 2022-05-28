@@ -1,0 +1,66 @@
+Requipments :
+
+XAMPP yang sudah include php versi 8 disini ada versi 3.3 bisa di download di 
+https://mega.nz/file/QMAg2JYS#gzoCBYnaigDvic96MT5OS_yvH2Egx60nWJSw34aDjcs
+disini php versi yang digunakan 8.0.13
+
+- Download versi php yang dibutuhkan
+PHP 7.4.3: https://github.com/tomioke/docs_php_developer/raw/master/php-version/php-7.4.3-Win32-vc15-x64.zip
+
+- Matikan koneksi dari xampp 
+
+- Buat folder untuk file xampp, dengan C:/xampp/NAMA-FOLDER-VERSI-PHP
+Contoh disini folder xampp ada di D:/xampp/php/PHP7_4_1, copy dan paste file telah di download dan extract
+seltelah sudah lalu hapus file download an.
+
+- Aktifkan extension default dibawah dengan cara menghapus komentar yang ditandai tanda ;
+Berikut yang harus diaktifkan dan copy paste file php.ini-production untuk backup dan ubah jadi php.ini :
+
+- extension_dir => dibawah On windows: isi directory lokasi php
+misal extension_dir = "\xampp\php7_4_3\ext"
+
+- extension=bz2
+- extension=curl
+- extension=ftp
+- extension=fileinfo
+- extension=gd2
+- extension=gettext
+- extension=gmp
+- extension=intl
+- extension=mbstring
+- extension=exif
+- extension=mysqli
+- extension=openssl
+- extension=pdo_mysql
+- extension=pdo_sqlite
+- extension=php_sqlite3
+
+dan bonus optional disini untuk aktifkan soap
+- extension=php_soap
+==========================================
+- Gunakan listen port yang belum terpakai di PC, cek di CMD, ketik netstat -aon
+- Klik config pada xampp -> apache, pilih httpd-xampp.conf dibagian paling bawah
+
+#CONFIG PHP 7.4.3
+ScriptAlias /php7_4_3/ "D:/xampp/php7_4_3/"
+<Directory "D:/xampp/php7_4_3">
+    AllowOverride None
+    Options None
+    Require all denied
+    <Files "php-cgi.exe">
+          Require all granted
+    </Files>
+</Directory>
+
+Listen 5074
+<VirtualHost *:5074>
+    UnsetEnv PHPRC
+    <FilesMatch "\.php$">
+        php_flag engine off
+        SetHandler application/x-httpd-php7_4_3
+        Action application/x-httpd-php7_4_3 "/php7_4_3/php-cgi.exe"
+    </FilesMatch>
+</VirtualHost>
+
+Bisa dicek dengan
+PHP 7.4.3 64-bit: http://localhost:5074/dashboard/phpinfo.php
