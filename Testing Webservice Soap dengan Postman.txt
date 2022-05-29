@@ -1,0 +1,42 @@
+Testing Web Service SOAP using Nusoap in Postman
+
+Requires:
+ - Postman, bisa di download di: 
+https://mega.nz/file/4Np0WDaT#VLGEmecbZT7KYFt2RxnyYp5tHwjdv5yl22yQdE5Y1Z4
+
+Step:
+
+- Untuk pertama kali masuk, buat new -> collection input name terserah
+- Tambah request -> pilih POST -> Masukan url soap server wsdl misal: http://localhost:5074/nusoap_exampledb_1/webservices/service.php?wsdl
+- Pilih body di bawah url, pada body pilih yang raw.
+- Install extension wizdler pada chrome
+- Buka web sevice lalu klik ekstensi wizdler, maka akan muncul data xml lalu copy paste ke postman
+- Setting header dengan menambahkan :
+Content-Type: text/xml
+SOAPAction: <masukan soap_action yang mau ditest>
+
+contoh :
+Content-Type: text/xml
+SOAPAction: #carimhs
+
+- Pada postman set bagian raw ke dari text ke xml
+misal untuk carimhs: skrip seperti berikut
+
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+    <Body>
+        <carimhs xmlns="http://localhost:5074">
+            <nim>[isi sesuai nim]</nim>
+        </carimhs>
+    </Body>
+</Envelope>
+
+Kemudian send maka akan keluar output seperti ini:
+
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<SOAP-ENV:Envelope SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+    <SOAP-ENV:Body>
+        <ns1:carimhsResponse xmlns:ns1="http://localhost:5074/nusoap_exampledb_1/webservices/service.php">
+            <data xsi:type="xsd:string">{&quot;nim&quot;:&quot;2003040001&quot;,&quot;nama&quot;:&quot;Andi&quot;,&quot;biaya_semester&quot;:&quot;8000000&quot;}</data>
+        </ns1:carimhsResponse>
+    </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
