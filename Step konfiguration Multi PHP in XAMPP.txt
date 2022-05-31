@@ -17,7 +17,7 @@ seltelah sudah lalu hapus file download an.
 Berikut yang harus diaktifkan dan copy paste file php.ini-production untuk backup dan ubah jadi php.ini :
 
 - extension_dir => dibawah On windows: isi directory lokasi php
-misal extension_dir = "\xampp\php7_4_3\ext"
+misal extension_dir = "D:/xampp/php7_4_3/ext"
 
 - extension=bz2
 - extension=curl
