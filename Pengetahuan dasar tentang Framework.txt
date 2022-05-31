@@ -4,6 +4,8 @@ Controller = mengatur semua logic dan alur program terjadi
 
 Model = tempat untuk mengatur kegiatan dalam database, bisa create, update maupun delete
 
+View = lokasi untuk tampilan GUI ke User
+===========================================================================================
 Alasan kuat untuk pakai framework:
  - Butuh proses cepat dalam pengembangan aplikasi
  - Membuat aplikasi lebih aman 
