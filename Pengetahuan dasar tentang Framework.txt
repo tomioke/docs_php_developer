@@ -1,0 +1,24 @@
+Ilmu dasar framework dengan MVC
+
+Controller = mengatur semua logic dan alur program terjadi
+
+Model = tempat untuk mengatur kegiatan dalam database, bisa create, update maupun delete
+
+Alasan kuat untuk pakai framework:
+ - Butuh proses cepat dalam pengembangan aplikasi
+ - Membuat aplikasi lebih aman 
+ - Lebih mudah dalam maintenance
+ - Bekerja dalam team
+
+Alasan memilih framework Codeigniter :
+ - Mudah digunakan, ringan dan cepat dalam pemrosesan data
+ - Tidak terlalu ketat dalam melakukan aturan koding
+ - Dokumentasi yang mudah di pahami
+ - Support komunitas yang kuat
+
+Kekurangan dari framework:
+ - Eksekusi program butuh waktu lama
+ - Solusi umum untuk masalah yang spesifik
+ - Butuh waktu untuk mempelajari
+ - Butuh kesepakatan dlm tim, walaupun pake framework
+
