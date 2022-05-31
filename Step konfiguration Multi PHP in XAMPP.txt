@@ -62,5 +62,14 @@ Listen 5074
     </FilesMatch>
 </VirtualHost>
 
-Bisa dicek dengan
+Ketik env masuk ke evironment variable, set user dan sistem pada path
+Disini di contohkan untuk php 7.4
+<lokasi direktori>\xampp\php7_4_3
+
+Copy paste file nama php.exe jadi php7
+
+Cek dengan cmd
+php7 -v 
+
+Bisa dicek dalam browser
 PHP 7.4.3 64-bit: http://localhost:5074/dashboard/phpinfo.php
