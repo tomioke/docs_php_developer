@@ -62,7 +62,7 @@ Listen 5074
     </FilesMatch>
 </VirtualHost>
 
-Ketik env masuk ke evironment variable, set user dan sistem pada path
+Ketik env pada pencarian windows, masuk ke evironment variable, set user dan sistem pada path
 Disini di contohkan untuk php 7.4
 <lokasi direktori>\xampp\php7_4_3
 
