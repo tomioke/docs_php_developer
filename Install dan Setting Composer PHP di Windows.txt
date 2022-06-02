@@ -1,0 +1,45 @@
+Kebutuhan Server Development
+
+ - Minimal menggunakan PHP 7.4
+ - Composer
+
+Step install composer
+Cek versi composer
+$ composer -V
+
+Instalasi manual composer via CMD:
+$ mkdir D:\xampp\htdocs\composersetup
+
+$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === '55ce33d7678c5a611085589f1f3ddf8b3c52d662cd01d4ba75c0ee0459970c2200a51f492d557530c71c15d8dba01eae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+
+Default newst version: 
+php composer-setup.php
+
+Custom version 2.2 LTS for PHP 7.2:
+php composer-setup.php --2.2
+
+Set global use:
+
+$ echo @php "%~dp0composer.phar" %*>composer.bat  
+
+Edit dan tambahkan skrip berikut:
+
+@ECHO OFF
+@php "%~dp0composer.phar" %*
+
+$ composer -V
+
+Contoh penggunaan composer pada instalasi Codeigniter:
+
+composer create-project codeigniter4/appstarter your-project-name 
+
+$ composer create-project codeigniter4/appstarter ci4_template 
+
+Menjalankan Codeigneter dengan versi php berbeda dengan bash
+
+$ which php7
+
+php spark serve --php <lokasi direktori php>
+
+$ php spark serve --php /d/xampp/php7_4_3/php7
