@@ -1,0 +1,24 @@
+
+Referensi :
+https://medium.com/kode-dan-kodean/ekstensi-dan-tema-visual-studio-code-yang-saya-gunakan-6c3555762816
+https://medium.com/@TheAkshayKhale/few-of-the-best-vs-code-extensions-for-php-developers-5077680e838c
+
+Berikut ini ekstensi program visual studio code punya saya: 
+
+ - Auto rename tag
+ - Better Comments
+ - Bootstrap 4
+ - Comunity Material Theme
+ - Color info
+ - DotENV
+ - Indent-rainbow
+ - Live server
+ - Material theme
+ - Material theme icons
+ - Mongodb for vscode
+ - One dark pro
+ - Open in browser
+ - PHP Intelephense
+ - Prettier 
+ - Thunder Client
+ - PHP Intellisense for codeigniter
