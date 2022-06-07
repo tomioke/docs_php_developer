@@ -1,0 +1,18 @@
+ - Buat composer.json
+contohnya masukan:
+{
+ "require": {
+ "phpunit/phpunit": "^6.2",
+ "phpspec/phpspec": "^3.2"
+ }
+}
+
+Jalankan perintah install 
+$ composer install
+ Jika error tidak compatible dengan versi php:
+ $ composer install --ignore-platform-reqs
+
+Jika ingin menambahkan library:
+$ composer update
+   Jika error tidak compatible dengan versi php:
+   $ composer update --ignore-platform-reqs

@@ -1,0 +1,51 @@
+Kebutuhan Server Development
+
+ - Minimal menggunakan PHP 8.0.13
+ - Nusoap 0.9.11
+ - Codeigniter 3.1.5 
+
+Install semua file yg dibutuhkan dengan composer:
+
+1. Install codeigniter 3
+# composer create-project kenjis/codeigniter-composer-installer "nama_projek"
+
+$ composer create-project ionixeternal/Codeigniter-3 ci_sample
+
+composer create-project Codeigniter/framework ci_sample 3.1.5
+
+Jika ada error :
+Cara Mengatasi require-dev.mikey179/vfsStream is invalid
+
+Mudah saja tinggal buka composer.json cari package "mikey179/vfsStream" ubah spt ini "mikey179/vfsstream": "1.1.*",
+
+lalu update lagi composer pada project
+
+$ composer update
+
+2. Install Nusoap versi 0.9.11
+
+$ composer require econea/nusoap "0.9.11"
+
+Setting bagian config.php
+
+Setting application->config->config.php, kemudian cari "$config['composer_autoload']" hapus dan ganti jadi $config['composer_autoload'] = "vendor/autoload.php";
+
+Setting masih di config.php cari $config['base_url'] = ''; tambahkan skrip di dalam '' seperti ini
+
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+
+Cari file $config['index_page'] = 'index.php'; menjadi $config['index_page'] = ''; 
+
+Setting bagian application->config->autoload.php 
+
+- Cari helper atau lengkapnya $autoload['helper'] = array(); isi dengan array :
+$autoload['helper'] = array('url');
+
+- Buat .htaccess
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
