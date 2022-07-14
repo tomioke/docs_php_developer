@@ -1,0 +1,84 @@
+ - Download codeigniter 3 versi 3.1.5
+
+composer create-project Codeigniter/framework <nama_project> 3.1.5
+
+ - Hilangkan index.php pada folder application/config/config.php
+
+Baris 38 $config['index_page'] = 'index.php'; 
+
+hapus menjadi 
+
+$config['index_page'] = '';
+
+ - Keluar dari folder application, buat file baru dengan nama .htaccess
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+ - Kembali ke folder application/config/config.php
+
+baris 26 Ubah dari $config['base_url'] = ''; 
+
+menjadi :
+
+// Deploy ke hosting
+$config['base_url'] = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+$config['base_url'] .= "://" . $_SERVER['HTTP_HOST'];
+$config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+
+ - Buka folder application/config/autoload.php
+
+untuk default pada:
+$autoload['libraries'] = array();
+$autoload['helper'] = array();
+
+Ubah menjadi untuk default (sesuaikan dengan project yang akan dibangun) :
+$autoload['libraries'] = array('database', 'session');
+$autoload['helper'] = array('url'); 
+
+ - Test route dengan buat controller pada folder application/controller/testController.php
+
+<?php
+    defined('BASEPATH') OR exit('No direct script access allowed');
+
+    class testController extends CI_Controller {
+        public function __construct() {
+            parent::__construct();
+        }
+
+        // Index untuk client side denngan route ke folder views
+        public function index()
+	{
+		$this->load->view('testing');
+	}
+    }
+?>
+
+ - Tampilkan untuk di buka kedalam browser di dalam folder application/views/testing.php karena kita panggil view dengan nama file testing.php
+
+<?php
+    defined('BASEPATH') OR exit('No direct script access allowed');
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My bootstrap template</title>
+</head>
+<body>
+    <h1> Sukses buka halaman!!</h1>
+</body>
+</html>
+
+ - Buka kembali untuk routing url folder application/config/routes.php
+
+Setting default nya ke :
+$route['default_controller'] = 'welcome';
+
+menjadi :
+$route['default_controller'] = 'testcontroller';
+
