@@ -66,7 +66,7 @@ Ketik env pada pencarian windows, masuk ke evironment variable, set user dan sis
 Disini di contohkan untuk php 7.4
 <lokasi direktori>\xampp\php7_4_3
 
-Copy paste file nama php.exe jadi php7
+Copy paste file nama php.exe jadi php7.exe pada folder php7_4_3
 
 Cek dengan cmd
 php7 -v 
