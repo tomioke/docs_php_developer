@@ -1,0 +1,16 @@
+Buat database MySQL di Heroku
+
+Referensi:
+ - https://devcenter.heroku.com/
+ - https://www.bezkoder.com/deploy-node-js-app-heroku-cleardb-mysql/
+
+$ heroku addons:create cleardb:ignite -a <nama aplikasi kamu>
+
+Created cleardb-cylindrical-62760 as CLEARDB_DATABASE_URL
+Use heroku addons:docs cleardb to view documentation
+
+$ heroku config | grep CLEARDB_DATABASE_URL
+atau
+$ heroku config | findstr CLEARDB_DATABASE_URL
+
+ 

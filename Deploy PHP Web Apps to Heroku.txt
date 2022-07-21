@@ -1,0 +1,85 @@
+Tutor deploy PHP Web ke Heroku Hosting
+
+1. Pastikan sudah daftar jadi member heroku
+
+2. Setelah login, patikan sudah punya heroku cli di sistem operasi, disini saya pakai windows 10
+
+Disini contoh minimum requipments:
+
+a. Composer terbaru
+b. PHP versi 7.4 atau diatasnya
+c. Heroku CLI
+d. Git
+
+3. Buka cmd, cek versi php, heroku dan composer apakah sudah terinstall belum
+
+- Cek versi PHP
+
+- Cek versi heroku
+
+ $ heroku -v, to updates : $ heroku update
+
+ $ php -v
+
+- Cek versi composer
+
+ $ composer -V
+
+- Cek versi github
+
+ $ git --version
+
+4. Login dengan cli 
+
+$ heroku login
+
+Setelah sukses login.
+
+5. Buat app baru 
+
+$ heroku create -a <nama_app>
+
+untuk ubah stack ke versi 18 (default stack 20)
+
+$ heroku stack:set heroku-18
+
+contoh apabila sukses:
+
+Creating ⬢ pokemon-apis... done
+https://pokemon-apis.herokuapp.com/ | https://git.heroku.com/pokemon-apis.git
+
+buat config composer.json pada project pada user:
+
+{
+    "require": {
+      "php": "^7.4.0"
+    }
+}
+
+dan buat Procfile dan isi dengan:
+
+web: heroku-php-apache2
+
+6. Kemudian saya initialize project 
+
+$ git init
+
+7. Setelah itu lakukan remote ke project kita, sesuaikan dengan nama project kita masing-masing.
+
+$ heroku git:remote -a <nama_app>
+heroku git:remote -a pokemon-apis
+
+Ini respon sukses:
+set git remote heroku to https://git.heroku.com/pokemon-apis.git
+
+8. Setelah itu lakukan perintah git add [nama file] 
+
+$ git add .
+
+9. lakukan commit 
+
+$ git commit -am “Deploy PHP file to Heroku”
+
+10. Setelah itu baru push ke heroku master, dengan cara: 
+
+$ git push heroku master
